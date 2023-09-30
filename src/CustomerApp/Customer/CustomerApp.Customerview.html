@@ -1,0 +1,41 @@
+<div>
+  {{title}}<br />
+  <form (submit)="Add()">
+    <label>Customer Code:</label
+    ><input
+      type="text"
+      class="border-2"
+      [(ngModel)]="CustomerModel.CustomerCode"
+      name="code"
+    /><br />
+    <label>Customer Name:</label
+    ><input
+      type="text"
+      class="border-2"
+      [(ngModel)]="CustomerModel.CustomerName"
+      name="name"
+    /><br />
+    <label>Customer Amount:</label
+    ><input
+      type="text"
+      class="border-2"
+      [(ngModel)]="CustomerModel.CustomerAmount"
+      name="amount"
+    /><br />
+    <input type="submit" class="border-2 border-black rounded-lg" />
+    <table class="border-2 border-black">
+      <tr class="border-2 border-black">
+        <th class="border-2 border-black">CustomerCode</th>
+        <th class="border-2 border-black">CustomerName</th>
+        <th class="border-2 border-black">CustomerAmount</th>
+      </tr>
+      <tr *ngFor="let data of CustomerModels" class="border-2 border-black">
+        <td class="border-2 border-black">{{data.CustomerCode}}</td>
+        <td class="border-2 border-black">{{data.CustomerName}}</td>
+        <td class="border-2 border-black">{{data.CustomerAmount}}</td>
+      </tr>
+    </table>
+  </form>
+
+  <!-- {{CustomerModel | json}} -->
+</div>
